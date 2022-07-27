@@ -1,0 +1,16 @@
+<%- include('./partials/header', {title: "List of users"}) %>
+    <h1 class="text-center p-4">List of users</h1>
+    <% if (error !== null) { %>
+        <p class="text-red-600 text-center "><%= error %></p>
+    <% } %>
+    <% if(users !== null) { %>
+        <div class="flex flex-wrap p-5">
+            <% users.forEach(user => { %>
+                <div class="bg-gray-100 break-words w-1/5 p-5 border rounded mx-1 shadow border-blue-100 my-2 p-5">
+                    <p><%= user.name %></p>
+                    <p class=""><%= user.email %></p>
+                </div>
+            <% }); %>
+        </div>
+    <% } %>
+<%- include('./partials/footer') %>
